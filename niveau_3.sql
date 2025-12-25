@@ -11,3 +11,8 @@ SELECT f.nom_formation , COUNT(pf.participant_id)
 FROM formations f
 INNER JOIN participant_formation pf ON f.id = pf.formation_id
 GROUP BY f.nom_formation HAVING COUNT(pf.participant_id) > 4;
+
+SELECT  p.nationalite 
+FROM participants p 
+INNER JOIN formations f ON p.id = f.id
+WHERE f.nom_formation = 'Workshop Carte ID';
